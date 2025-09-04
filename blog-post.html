@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Zentaverse - Blog Post</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#6366f1"/>
+                        <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="white"/>
+                        <circle cx="20" cy="20" r="5" fill="#6366f1"/>
+                    </svg>
+                    <span>Zentaverse</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#blog" class="nav-link">Blog</a>
+                    <a href="index.html#products" class="nav-link">Products</a>
+                    <a href="index.html#categories" class="nav-link">Categories</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="index.html#blog">Blog</a>
+                <span>/</span>
+                <span id="breadcrumbCategory"></span>
+                <span>/</span>
+                <span id="breadcrumbTitle"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-container">
+                <!-- Main Content -->
+                <div class="blog-post-content">
+                    <!-- Post Header -->
+                    <div class="post-header">
+                        <span class="post-category" id="postCategory"></span>
+                        <h1 class="post-title" id="postTitle"></h1>
+                        <div class="post-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50" alt="Author" class="author-avatar">
+                                <div>
+                                    <div class="author-name" id="authorName"></div>
+                                    <div class="post-date-time">
+                                        <span id="postDate"></span> · <span id="readTime"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn" id="likeBtn">
+                                    <i class="far fa-heart"></i>
+                                    <span id="likeCount">245</span>
+                                </button>
+                                <button class="action-btn" id="shareBtn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="action-btn" id="bookmarkBtn">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image -->
+                    <div class="featured-image">
+                        <img id="featuredImage" src="" alt="">
+                    </div>
+
+                    <!-- Post Body -->
+                    <div class="post-body" id="postContent">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="post-tags" id="postTags">
+                        <!-- Tags will be dynamically added -->
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Author" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3 id="bioAuthorName"></h3>
+                            <p id="bioDescription">Technology writer and innovation enthusiast with over 10 years of experience covering emerging tech trends, digital transformation, and startup ecosystems.</p>
+                            <div class="bio-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-medium"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="post-navigation">
+                        <a href="#" class="nav-post prev-post" id="prevPost">
+                            <span class="nav-label">Previous Article</span>
+                            <span class="nav-title" id="prevTitle"></span>
+                        </a>
+                        <a href="#" class="nav-post next-post" id="nextPost">
+                            <span class="nav-label">Next Article</span>
+                            <span class="nav-title" id="nextTitle"></span>
+                        </a>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <h3>Comments (<span id="commentCount">12</span>)</h3>
+                        
+                        <!-- Comment Form -->
+                        <form class="comment-form" id="commentForm">
+                            <textarea placeholder="Share your thoughts..." required></textarea>
+                            <div class="form-actions">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="email" placeholder="Your Email" required>
+                                <button type="submit">Post Comment</button>
+                            </div>
+                        </form>
+
+                        <!-- Comments List -->
+                        <div class="comments-list" id="commentsList">
+                            <div class="comment">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50" alt="Commenter" class="comment-avatar">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <strong>Michael Chen</strong>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                    <p>Great article! The insights on AI integration are particularly valuable. Looking forward to implementing these strategies in our workflow.</p>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">Reply</button>
+                                        <button class="like-comment-btn"><i class="far fa-heart"></i> 5</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50" alt="Commenter" class="comment-avatar">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <strong>Sarah Williams</strong>
+                                        <span>5 hours ago</span>
+                                    </div>
+                                    <p>This is exactly what I was looking for! The practical examples make it easy to understand complex concepts.</p>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">Reply</button>
+                                        <button class="like-comment-btn"><i class="far fa-heart"></i> 8</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-post-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Search</h3>
+                        <div class="search-widget">
+                            <input type="text" placeholder="Search articles...">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#" data-category="technology">Technology <span>(15)</span></a></li>
+                            <li><a href="#" data-category="business">Business <span>(12)</span></a></li>
+                            <li><a href="#" data-category="lifestyle">Lifestyle <span>(8)</span></a></li>
+                            <li><a href="#" data-category="travel">Travel <span>(10)</span></a></li>
+                            <li><a href="#" data-category="food">Food & Cuisine <span>(6)</span></a></li>
+                            <li><a href="#" data-category="health">Health <span>(9)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Related Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Related Articles</h3>
+                        <div class="related-posts" id="relatedPosts">
+                            <!-- Related posts will be dynamically loaded -->
+                        </div>
+                    </div>
+
+                    <!-- Popular Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Popular This Week</h3>
+                        <div class="popular-posts" id="popularPosts">
+                            <!-- Popular posts will be dynamically loaded -->
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3>Newsletter</h3>
+                        <p>Get the latest articles delivered to your inbox</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Social Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Follow Us</h3>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zentaverse</h3>
+                    <p>Your trusted source for diverse content and insights.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Travel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zentaverse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" class="share-btn email"><i class="fas fa-envelope"></i> Email</a>
+                <button class="share-btn copy-link" id="copyLinkBtn"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
+            <button class="close-share-modal">&times;</button>
+        </div>
+    </div>
+
+    <script src="blog-data.js"></script>
+    <script src="blog-post.js"></script>
+</body>
+</html>
